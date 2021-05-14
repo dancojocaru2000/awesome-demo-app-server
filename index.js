@@ -17,10 +17,21 @@ app.get('/', (req, res) => {
 		}
 	})
 
-	res.render('index', {
-		latest: versions[0],
-		versions: versions.slice(1)
-	})	
+	const respondWith = req.accepts(['html', 'json'])
+
+	if (respondWith === "json") {
+		res.send(versions)
+	}
+	else {
+		res.render('index', {
+			latest: versions[0],
+			versions: versions.slice(1)
+		})	
+	}
+})
+
+app.get('/index.json', (req, res) => {
+
 })
 
 app.get('/files/:version/:file', (req, res) => {
