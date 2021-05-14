@@ -5,6 +5,8 @@ const port = 3000
 
 app.set('view engine', 'pug')
 
+app.use(express.static('static'))
+
 app.get('/', (req, res) => {
 	const versionNames = fs.readdirSync('/build-output')
 	versionNames.sort((e1, e2) => parseInt(e2) - parseInt(e1))

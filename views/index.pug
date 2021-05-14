@@ -1,20 +1,21 @@
 html
   head
+    link(rel='stylesheet', href='index.css')
     title awesome-demo-app
   body
     h1 awesome-demo-app
-    div
-      h2 
+    div.app-version.latest
+      p.title 
         b Latest version: 
         = latest.name
       ul
         each file in latest.files
           li: a(href=`/files/${latest.name}/${file}`)= file
-    h3 Versions:    
-      ul
-        each version in versions
-          li
-            p= version.name
-            ul
-              each file in version.files
-                li: a(href=`/files/${version.name}/${file}`)= file
+    div 
+      h3 Versions:    
+      each version in versions
+        div.app-version
+          p.title= version.name
+          ul
+            each file in version.files
+              li: a(href=`/files/${version.name}/${file}`)= file

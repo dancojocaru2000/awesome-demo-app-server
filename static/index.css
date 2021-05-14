@@ -1,0 +1,14 @@
+.app-version {
+	border: 1px solid black;
+	padding: 4px;
+	margin: 4px;
+}
+
+.app-version .title {
+	font-size: 1.25em;
+}
+
+.app-version.latest {
+	border-color: blue;
+	font-size: 1.25em;
+}
