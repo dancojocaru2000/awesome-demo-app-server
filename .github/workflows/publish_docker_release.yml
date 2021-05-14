@@ -20,7 +20,6 @@ jobs:
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          tags: 
-            - ${{ format('kbruen/awesome-demo-app-server:{0}', steps.tag_name.outputs.TAG) }}
+          tags: ${{ format('kbruen/awesome-demo-app-server:{0}', steps.tag_name.outputs.TAG) }}
           push: true
 
