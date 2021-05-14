@@ -1,4 +1,4 @@
-name: Publish Docker Image
+name: Publish Docker Image on Release
 on:
   release:
     types: [published]
@@ -20,6 +20,7 @@ jobs:
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          tags: [kbruen/awesome-demo-app-server:${{ steps.tag_name.outputs.TAG }}]
+          tags: 
+            - ${{ format('kbruen/awesome-demo-app-server:{0}', steps.tag_name.outputs.TAG) }}
           push: true
 

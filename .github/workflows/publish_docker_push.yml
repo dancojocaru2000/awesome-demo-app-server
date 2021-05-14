@@ -1,4 +1,4 @@
-name: Publish Docker Image
+name: Publish Docker Image on Push
 on:
   push:
     branches:
@@ -18,6 +18,6 @@ jobs:
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          tags: [kbruen/awesome-demo-app-server:latest]
+          tags: ["kbruen/awesome-demo-app-server:latest"]
           push: true
 
