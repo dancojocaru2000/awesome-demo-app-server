@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 	res.render('index', {
 		latest: versions[0],
-		versions: versions
+		versions: versions.slice(1)
 	})	
 })
 

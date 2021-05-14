@@ -12,7 +12,7 @@ html
         each file in latest.files
           li: a(href=`/files/${latest.name}/${file}`)= file
     div 
-      h3 Versions:    
+      h3 Older versions:    
       each version in versions
         div.app-version
           p.title= version.name
