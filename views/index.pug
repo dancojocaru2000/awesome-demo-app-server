@@ -1,0 +1,20 @@
+html
+  head
+    title awesome-demo-app
+  body
+    h1 awesome-demo-app
+    div
+      h2 
+        b Latest version: 
+        = latest.name
+      ul
+        each file in latest.files
+          li: a(href=`/files/${latest.name}/${file}`)= file
+    h3 Versions:    
+      ul
+        each version in versions
+          li
+            p= version.name
+            ul
+              each file in version.files
+                li: a(href=`/files/${version.name}/${file}`)= file
